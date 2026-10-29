@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MADA-MIH-ECHEC // CYBERKING PRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fast Flash Overlay for I'M DEAD -->
+    <div id="popup-maty" class="overlay miafina">
+        <div class="popup-card">
+            <h2 class="text-matv">I'M DEAD 💀</h2>
+        </div>
+    </div>
+
+    <!-- Winner Popup -->
+    <div id="popup-winner" class="overlay miafina">
+        <div class="popup-card popup-winner">
+            <h2 class="text-winner">WINNER 🏆</h2>
+            <p id="winner-desc">Match over!</p>
+            <button onclick="hamerinaLalao()">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <h1>MADA-MIH-ECHEC</h1>
+
+    <!-- LOGIN AREA: Completely disappears after success -->
+    <div id="auth-container" class="auth-wrapper">
+        <div class="cyber-box">
+            <h3>ADMIN 2 (Password Manager)</h3>
+            <input type="password" id="pass-admin2" placeholder="Admin 2 Password (superadmin)">
+            <input type="text" id="new-pass" placeholder="New Password for Player">
+            <button onclick="ovaikoNyPassword()">Save New Password</button>
+        </div>
+
+        <div id="panel-login" class="cyber-box">
+            <h3>ADMIN 1 (Player Login)</h3>
+            <input type="password" id="pass-admin1" placeholder="Enter Player Password">
+            <button onclick="hizahaFidirana()">Login & Play</button>
+            <p id="hevitra-error" style="color: var(--cyber-neon-pink); font-weight: bold; margin-top: 5px;"></p>
+        </div>
+    </div>
+
+    <!-- GAME AREA: Appears on success -->
+    <div id="sehatra-lalao" class="miafina game-screen-wrapper">
+        <div class="cyber-box header-control">
+            <div id="status">White's Turn</div>
+            <select id="game-mode" onchange="hanovaMode()">
+                <option value="p2p">2 Players (Pass & Play)</option>
+                <option value="ai">Play vs Computer (AI)</option>
+                <option value="multi">Online Multiplayer (Hotspot/Server)</option>
+            </select>
+        </div>
+
+        <!-- Score Info Display Panel -->
+        <div class="side-info">
+            <div class="text-w-score">WHITE GAIN: <span id="gain-white">0</span></div>
+            <div class="text-b-score">BLACK GAIN: <span id="gain-black">0</span></div>
+        </div>
+
+        <!-- Chessboard Grid -->
+        <div id="solaitra" class="grid-board"></div>
+
+        <div class="cyber-box footer-control" style="margin-top: 15px;">
+            <button onclick="toggleFullScreen()" style="background: var(--cyber-neon-blue); color: #000; margin-bottom: 5px;">🖥️ Agrandir / Fullscreen</button>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="hamerinaLalao()" style="background: var(--cyber-neon-green); color: #000;">🔄 Restart</button>
+                <button onclick="hivoakaNyLalao()" class="btn-danger">❌ Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
